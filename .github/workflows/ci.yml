@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Set up shell
+        run: |
+          sudo ln -sf /bin/bash /bin/sh
+
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Install dependencies
+        run: npm install -g pnpm
+
+      - name: Check npm version
+        run: npm —version
+
+      - name: Check pnpm version
+        run: pnpm —version
