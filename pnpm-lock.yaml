@@ -27,9 +27,9 @@ importers:
         specifier: latest
         version: 1.12.5
 
-  apps/docs:
+  apps/admin:
     dependencies:
-      '@repo/ui':
+      '@with/ui':
         specifier: workspace:*
         version: link:../../packages/ui
       next:
@@ -70,9 +70,9 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
 
-  apps/web:
+  apps/client:
     dependencies:
-      '@repo/ui':
+      '@with/ui':
         specifier: workspace:*
         version: link:../../packages/ui
       next:
@@ -4832,12 +4832,12 @@ packages:
       acorn: 7.4.1
     dev: true
 
-  /acorn-jsx@5.3.2(acorn@8.10.0):
+  /acorn-jsx@5.3.2(acorn@8.11.3):
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
       acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
-      acorn: 8.10.0
+      acorn: 8.11.3
     dev: true
 
   /acorn-walk@7.2.0:
@@ -6971,8 +6971,8 @@ packages:
     resolution: {integrity: sha512-oruZaFkjorTpF32kDSI5/75ViwGeZginGGy2NoOSg3Q9bnwlnmDm4HLnkl0RE3n+njDXR037aY1+x58Z/zFdwQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      acorn: 8.10.0
-      acorn-jsx: 5.3.2(acorn@8.10.0)
+      acorn: 8.11.3
+      acorn-jsx: 5.3.2(acorn@8.11.3)
       eslint-visitor-keys: 3.4.3
     dev: true
 
@@ -7580,6 +7580,7 @@ packages:
   /glob@10.3.10:
     resolution: {integrity: sha512-fa46+tv1Ak0UPK1TOy/pZrIybNNt4HCv7SDzwyfiOZkvZLEbjsZkJBPtDHVshZjbecAoAGSC20MjLDG/qr679g==}
     engines: {node: '>=16 || 14 >=14.17'}
+    hasBin: true
     dependencies:
       foreground-child: 3.1.1
       jackspeak: 2.3.6
