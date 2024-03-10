@@ -13,7 +13,7 @@ importers:
         version: link:configs/eslint-config
       '@repo/typescript-config':
         specifier: workspace:*
-        version: link:configs/typescript-config
+        version: link:configs/tsconfig
       husky:
         specifier: ^8.0.0
         version: 8.0.3
@@ -50,7 +50,7 @@ importers:
         version: link:../../configs/eslint-config
       '@repo/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript-config
+        version: link:../../configs/tsconfig
       '@types/eslint':
         specifier: ^8.56.5
         version: 8.56.5
@@ -93,7 +93,7 @@ importers:
         version: link:../../configs/eslint-config
       '@repo/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript-config
+        version: link:../../configs/tsconfig
       '@types/eslint':
         specifier: ^8.56.5
         version: 8.56.5
@@ -137,7 +137,7 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
 
-  configs/typescript-config: {}
+  configs/tsconfig: {}
 
   packages/foundation:
     dependencies:
@@ -150,7 +150,7 @@ importers:
         version: link:../../configs/eslint-config
       '@repo/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript-config
+        version: link:../../configs/tsconfig
 
   packages/ui:
     devDependencies:
@@ -159,7 +159,7 @@ importers:
         version: link:../../configs/eslint-config
       '@repo/typescript-config':
         specifier: workspace:*
-        version: link:../../configs/typescript-config
+        version: link:../../configs/tsconfig
       '@storybook/addon-essentials':
         specifier: ^7.6.17
         version: 7.6.17(@types/react-dom@18.2.19)(@types/react@18.2.61)(react-dom@18.2.0)(react@18.2.0)
