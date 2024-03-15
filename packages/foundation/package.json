@@ -11,12 +11,13 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
-		"./themes.css": "./dist/themes.css"
+		"./themes.css": "./dist/themes.css",
+		"./globalStyle.css": "./dist/index.css"
 	},
 	"scripts": {
 		"lint": "eslint . --max-warnings 0",
 		"generate:component": "turbo gen react-component",
-		"build": "pnpm run clean && pnpm run build:js && pnpm run build:type",
+		"build": "pnpm run clean && pnpm run build:js && pnpm run build:type && pnpm run build:css",
 		"build:js": "node build.js",
 		"build:type": "tsc --emitDeclarationOnly",
 		"build:css": "node ./scripts/build-css-modules.js",
