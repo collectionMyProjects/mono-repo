@@ -1,7 +1,8 @@
 import React from 'react';
+import '@with/foundation/themes.css';
 
 const page = () => {
-	return <div></div>;
+	return <div>hi</div>;
 };
 
 export default page;

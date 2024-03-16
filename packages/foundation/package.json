@@ -4,9 +4,23 @@
 	"private": true,
 	"main": "./src/index.ts",
 	"types": "./src/index.ts",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		},
+		"./themes.css": "./dist/themes.css"
+	},
 	"scripts": {
 		"lint": "eslint . --max-warnings 0",
-		"generate:component": "turbo gen react-component"
+		"generate:component": "turbo gen react-component",
+		"build": "pnpm run clean && pnpm run build:js && pnpm run build:type",
+		"build:js": "node build.js",
+		"build:type": "tsc --emitDeclarationOnly",
+		"build:css": "node ./scripts/build-css-modules.js",
+		"clean": "rimraf dist"
 	},
 	"devDependencies": {
 		"@repo/eslint-config": "workspace:*",
@@ -16,6 +30,7 @@
 		"@types/node": "^20.11.24",
 		"@types/react": "^18.2.61",
 		"@types/react-dom": "^18.2.19",
+		"esbuild": "0.16.17",
 		"eslint": "^8.57.0",
 		"eslint-plugin-storybook": "^0.8.0",
 		"react": "^18.2.0",
@@ -23,6 +38,7 @@
 		"typescript": "^5.3.3"
 	},
 	"dependencies": {
-		"react": "^18.2.0"
+		"react": "^18.2.0",
+		"rimraf": "^5.0.5"
 	}
 }
