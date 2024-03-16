@@ -1,4 +1,3 @@
-import { StyleProvider } from '@with/foundation';
 import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 
@@ -10,9 +9,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: PropsWithChildren) => {
 	return (
 		<html lang="en">
-			<body>
-				<StyleProvider>{children}</StyleProvider>
-			</body>
+			<body>{children}</body>
 		</html>
 	);
 };
