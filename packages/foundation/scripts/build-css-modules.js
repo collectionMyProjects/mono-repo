@@ -5,11 +5,9 @@ const generateThemeCssVariables = () => {
 	let cssString = ':root {\n';
 
 	Object.entries(theme.vars.colors).forEach(([colorName, colorValues]) => {
-		Object.entries(colorValues).forEach(([key, shadeValues]) => {
-			Object.entries(shadeValues).forEach(([shadeKey, shadeValue]) => {
-				const cssVarName = `--${key}-${shadeKey}`;
-				cssString += `	${cssVarName}: ${shadeValue};\n`;
-			});
+		Object.entries(colorValues).forEach(([shade, shadeValue]) => {
+			const cssVarName = `--${colorName}-${shade}`;
+			cssString += `  ${cssVarName}: ${shadeValue};\n`;
 		});
 	});
 
