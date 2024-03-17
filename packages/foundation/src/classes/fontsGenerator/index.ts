@@ -1,4 +1,4 @@
-import fonts from '../fonts';
+import fonts from '../../variables/fonts';
 
 const head = {
 	'4xl': {

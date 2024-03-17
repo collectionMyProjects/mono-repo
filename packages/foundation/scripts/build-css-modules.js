@@ -35,10 +35,10 @@ const generateFontsVariables = () => {
 	return cssString;
 };
 
-const generateFontsClassVariables = () => {
+const generateFontsClass = () => {
 	let cssString = '';
 
-	Object.entries(theme.vars.fontG.head).forEach(
+	Object.entries(theme.classes.fontG.head).forEach(
 		([size, { fontSize, fontWeight, lineHeight }]) => {
 			cssString += `.head${size} {\n`;
 			cssString += `  font-size: ${fontSize};\n`;
@@ -48,7 +48,7 @@ const generateFontsClassVariables = () => {
 		},
 	);
 
-	Object.entries(theme.vars.fontG.text).forEach(
+	Object.entries(theme.classes.fontG.text).forEach(
 		([size, { fontSize, fontWeight, lineHeight }]) => {
 			cssString += `.text${size} {\n`;
 			cssString += `  font-size: ${fontSize};\n`;
@@ -64,11 +64,11 @@ const generateFontsClassVariables = () => {
 const generateThemeCss = () => {
 	const variablesColors = generateColorTokenVariables();
 	const variablesFonts = generateFontsVariables();
-	const variablesFontsClass = generateFontsClassVariables();
+	const fontsClass = generateFontsClass();
 
 	fs.writeFileSync(
 		'dist/themes.css',
-		variablesColors + variablesFonts + variablesFontsClass,
+		variablesColors + variablesFonts + fontsClass,
 	);
 };
 
