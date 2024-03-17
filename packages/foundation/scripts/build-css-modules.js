@@ -1,7 +1,7 @@
 import * as theme from '../dist/index.js';
 import fs from 'fs';
 
-const generateThemeCssVariables = () => {
+const generateColorTokenVariables = () => {
 	let cssString = ':root {\n';
 
 	Object.entries(theme.vars.colors).forEach(([colorName, colorValues]) => {
@@ -11,15 +11,65 @@ const generateThemeCssVariables = () => {
 		});
 	});
 
-	cssString += '}';
+	cssString += '}\n\n';
+
+	return cssString;
+};
+
+const generateFontsVariables = () => {
+	let cssString = ':root {\n';
+
+	Object.entries(theme.vars.fonts.fontSize).forEach(([size, value]) => {
+		cssString += `  --font-size-${size}: ${value};\n`;
+	});
+
+	Object.entries(theme.vars.fonts.fontWeight).forEach(([weight, value]) => {
+		cssString += `  --font-weight-${weight}: ${value};\n`;
+	});
+
+	Object.entries(theme.vars.fonts.lineHeight).forEach(([height, value]) => {
+		cssString += `  --line-height-${height}: ${value};\n`;
+	});
+
+	cssString += '}\n\n';
+	return cssString;
+};
+
+const generateFontsClassVariables = () => {
+	let cssString = '';
+
+	Object.entries(theme.vars.fontG.head).forEach(
+		([size, { fontSize, fontWeight, lineHeight }]) => {
+			cssString += `.head${size} {\n`;
+			cssString += `  font-size: ${fontSize};\n`;
+			cssString += `  font-weight: ${fontWeight};\n`;
+			cssString += `  line-height: ${lineHeight};\n`;
+			cssString += '}\n\n';
+		},
+	);
+
+	Object.entries(theme.vars.fontG.text).forEach(
+		([size, { fontSize, fontWeight, lineHeight }]) => {
+			cssString += `.text${size} {\n`;
+			cssString += `  font-size: ${fontSize};\n`;
+			cssString += `  font-weight: ${fontWeight};\n`;
+			cssString += `  line-height: ${lineHeight};\n`;
+			cssString += '}\n\n';
+		},
+	);
 
 	return cssString;
 };
 
 const generateThemeCss = () => {
-	const variables = generateThemeCssVariables();
+	const variablesColors = generateColorTokenVariables();
+	const variablesFonts = generateFontsVariables();
+	const variablesFontsClass = generateFontsClassVariables();
 
-	fs.writeFileSync('dist/themes.css', variables);
+	fs.writeFileSync(
+		'dist/themes.css',
+		variablesColors + variablesFonts + variablesFontsClass,
+	);
 };
 
 generateThemeCss();
