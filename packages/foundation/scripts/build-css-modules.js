@@ -1,6 +1,21 @@
 import * as theme from '../dist/index.js';
 import fs from 'fs';
 
+const generateBoxVariables = () => {
+	let cssString = ':root {\n';
+
+	Object.entries(theme.vars.box).forEach(([propertyName, propertyValues]) => {
+		Object.entries(propertyValues).forEach(([size, value]) => {
+			const cssVarName = `--${propertyName}-${size}`;
+			cssString += `  ${cssVarName}: ${value};\n`;
+		});
+	});
+
+	cssString += '}\n\n';
+
+	return cssString;
+};
+
 const generateColorTokenVariables = () => {
 	let cssString = ':root {\n';
 
@@ -62,13 +77,14 @@ const generateFontsClass = () => {
 };
 
 const generateThemeCss = () => {
+	const variablesBox = generateBoxVariables();
 	const variablesColors = generateColorTokenVariables();
 	const variablesFonts = generateFontsVariables();
 	const fontsClass = generateFontsClass();
 
 	fs.writeFileSync(
 		'dist/themes.css',
-		variablesColors + variablesFonts + fontsClass,
+		variablesBox + variablesColors + variablesFonts + fontsClass,
 	);
 };
 
