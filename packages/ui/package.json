@@ -35,5 +35,9 @@
 		"react-dom": "^18.2.0",
 		"storybook": "^7.6.17",
 		"typescript": "^5.3.3"
+	},
+	"dependencies": {
+		"@with/foundation": "workspace:^",
+		"@with/services": "workspace:^"
 	}
 }
