@@ -5,6 +5,7 @@ import { box } from 'variables';
 export const BaseStyle = style({
 	padding: 0,
 	margin: 0,
+	border: 'none',
 
 	// @ts-ignore
 	'&:focus-visible': {

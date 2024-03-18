@@ -3,12 +3,10 @@ import { AsElementProps, StyleProps } from '../core/types';
 import { extractSprinkleProps } from '../utils/properties';
 import { BaseStyle, StyleSprinkles } from '../core/style.css';
 import { clsx } from 'clsx';
-import { colors } from 'variables';
 
 export type BoxProps = AsElementProps & StyleProps;
 
 const Box = (props: BoxProps, ref: React.Ref<HTMLElement>) => {
-	console.log(colors.red[100]);
 	const { as = 'div', color, background, children } = props;
 
 	return React.createElement(
