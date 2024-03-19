@@ -12,7 +12,7 @@ export default {
 
 export const BoxStory = {
 	args: {
-		as: 'button',
+		as: 'div',
 		padding: '5',
 		background: 'pink',
 		boxShadow: 'xl',

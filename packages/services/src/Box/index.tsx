@@ -23,7 +23,7 @@ const Box = (props: BoxProps, ref: React.Ref<HTMLElement>) => {
 			]),
 			style: {
 				color: color,
-				background: background,
+				backgroundColor: background,
 				...props.style,
 			},
 		},

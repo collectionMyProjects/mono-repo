@@ -1,12 +1,14 @@
 import * as React from 'react';
-import { extractSprinkleProps } from '../utils/properties';
-import { BaseStyle, StyleSprinkles } from '../core/style.css';
-import { clsx } from 'clsx';
 import { FlexProps } from './types';
+import { clsx } from 'clsx';
+import { BaseStyle, StyleSprinkles } from '../core/style.css';
+import { extractSprinkleProps } from '../utils/properties';
 
 const Flex = (props: FlexProps, ref: React.Ref<HTMLElement>) => {
 	const {
 		as = 'div',
+		color,
+		background,
 		align,
 		basis,
 		direction,
@@ -34,12 +36,14 @@ const Flex = (props: FlexProps, ref: React.Ref<HTMLElement>) => {
 				display: 'flex',
 				alignItems: align,
 				justifyContent: justify,
-				flexBasis: basis,
 				flexDirection: direction,
+				flexWrap: wrap,
 				flexGrow: grow,
 				flexShrink: shrink,
-				flexWrap: wrap,
+				flexBasis: basis,
 				gap,
+				color: color,
+				backgroundColor: background,
 				...props.style,
 			},
 		},

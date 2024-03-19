@@ -75,6 +75,9 @@ importers:
       '@with/foundation':
         specifier: workspace:*
         version: link:../../packages/foundation
+      '@with/services':
+        specifier: workspace:^
+        version: link:../../packages/services
       '@with/ui':
         specifier: workspace:*
         version: link:../../packages/ui
