@@ -48,4 +48,4 @@ const Flex = (props: FlexProps, ref: React.Ref<HTMLElement>) => {
 };
 
 const _Flex = React.forwardRef(Flex);
-export { _Flex as Box };
+export { _Flex as Flex };
