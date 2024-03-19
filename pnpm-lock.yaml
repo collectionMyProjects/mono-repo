@@ -196,9 +196,15 @@ importers:
       '@vanilla-extract/esbuild-plugin':
         specifier: ^2.3.5
         version: 2.3.5(@types/node@20.11.24)(esbuild@0.16.17)
+      '@vanilla-extract/recipes':
+        specifier: ^0.5.2
+        version: 0.5.2(@vanilla-extract/css@1.14.1)
       '@vanilla-extract/sprinkles':
         specifier: ^1.6.1
         version: 1.6.1(@vanilla-extract/css@1.14.1)
+      classes:
+        specifier: link:../foundation/src/classes
+        version: link:../foundation/src/classes
       clsx:
         specifier: ^2.1.0
         version: 2.1.0
@@ -249,11 +255,17 @@ importers:
   packages/ui:
     dependencies:
       '@with/foundation':
-        specifier: workspace:^
-        version: link:../foundation
+        specifier: file:../foundation
+        version: file:packages/foundation
       '@with/services':
         specifier: workspace:^
         version: link:../services
+      classes:
+        specifier: link:../foundation/src/classes
+        version: link:../foundation/src/classes
+      variables:
+        specifier: link:../foundation/src/variables
+        version: link:../foundation/src/variables
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -5365,6 +5377,14 @@ packages:
 
   /@vanilla-extract/private@1.0.3:
     resolution: {integrity: sha512-17kVyLq3ePTKOkveHxXuIJZtGYs+cSoev7BlP+Lf4916qfDhk/HBjvlYDe8egrea7LNPHKwSZJK/bzZC+Q6AwQ==}
+    dev: false
+
+  /@vanilla-extract/recipes@0.5.2(@vanilla-extract/css@1.14.1):
+    resolution: {integrity: sha512-IcDw3tFOcSJ+DUxL8MIGbg03eyccYb6NBO/rcgp439PDuHxo5GIQefVeGc1L5mIr/lUVPwDc1N5OXTHiGpiz1A==}
+    peerDependencies:
+      '@vanilla-extract/css': ^1.0.0
+    dependencies:
+      '@vanilla-extract/css': 1.14.1
     dev: false
 
   /@vanilla-extract/sprinkles@1.6.1(@vanilla-extract/css@1.14.1):
@@ -12876,3 +12896,11 @@ packages:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
     dev: true
+
+  file:packages/foundation:
+    resolution: {directory: packages/foundation, type: directory}
+    name: '@with/foundation'
+    dependencies:
+      react: 18.2.0
+      rimraf: 5.0.5
+    dev: false

@@ -38,7 +38,9 @@
 	"dependencies": {
 		"@vanilla-extract/css": "^1.14.1",
 		"@vanilla-extract/esbuild-plugin": "^2.3.5",
+		"@vanilla-extract/recipes": "^0.5.2",
 		"@vanilla-extract/sprinkles": "^1.6.1",
+		"classes": "link:../foundation/src/classes",
 		"clsx": "^2.1.0",
 		"react": "^18.2.0",
 		"rimraf": "^5.0.5",
