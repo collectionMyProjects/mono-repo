@@ -25,7 +25,7 @@ const Text = (props: TextProps, ref: React.Ref<HTMLElement>) => {
 			]),
 			style: {
 				color: color,
-				background: background,
+				backgroundColor: background,
 				...props.style,
 			},
 		},
