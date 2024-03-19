@@ -37,7 +37,9 @@
 		"typescript": "^5.3.3"
 	},
 	"dependencies": {
-		"@with/foundation": "workspace:^",
-		"@with/services": "workspace:^"
+		"@with/foundation": "file:../foundation",
+		"@with/services": "workspace:^",
+		"classes": "link:../foundation/src/classes",
+		"variables": "link:../foundation/src/variables"
 	}
 }
