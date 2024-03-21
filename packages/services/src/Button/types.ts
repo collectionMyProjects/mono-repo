@@ -6,6 +6,8 @@ export type ButtonProps = {
 	color?: keyof typeof scale;
 	style?: React.CSSProperties;
 	background?: keyof typeof scale;
+	leftIcon?: React.ReactNode;
+	rightIcon?: React.ReactNode;
 	isDisabled?: boolean;
 	isLoading?: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;

@@ -6,6 +6,8 @@ import {
 	buttonStyle,
 	enableColorVariant,
 	hoverColorVariant,
+	spanStyle,
+	spinnerStyle,
 } from './style.css';
 import { ButtonProps } from './types';
 import { scale } from 'variables';
@@ -17,6 +19,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 			size = 'md',
 			color = 'gray',
 			background = 'pink',
+			leftIcon,
+			rightIcon,
+			isLoading,
+			isDisabled = false,
 			children,
 			style,
 		} = props;
@@ -31,15 +37,20 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 				? scale[background as keyof typeof scale][700]
 				: scale[background as keyof typeof scale][100];
 
+		const disabled = isLoading || isDisabled;
+
 		return (
 			<button
 				ref={ref}
+				role="button"
 				className={clsx([
 					buttonStyle({
 						size,
 						variant,
 					}),
 				])}
+				data-loading={isLoading}
+				disabled={disabled}
 				style={{
 					...assignInlineVars({
 						[enableColorVariant]: enableColor,
@@ -50,7 +61,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 					...style,
 				}}
 			>
-				{children}
+				{isLoading && <div className={spinnerStyle({ size })} />}
+				{leftIcon && <span className={spanStyle({ size })}>{leftIcon}</span>}
+				<span>{children}</span>
+				{rightIcon && <span className={spanStyle({ size })}>{rightIcon}</span>}
 			</button>
 		);
 	},
