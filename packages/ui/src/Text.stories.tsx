@@ -25,7 +25,7 @@ export default {
 	},
 };
 
-export const BoxStory = {
+export const TextStory = {
 	args: {
 		color: colors.pink[500],
 		textAlign: 'center',

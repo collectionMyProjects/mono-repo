@@ -11,7 +11,7 @@ export default {
 	tags: ['autodocs'],
 };
 
-export const BoxStory = {
+export const FlexStory = {
 	args: {
 		as: 'div',
 		padding: '5',

@@ -5,7 +5,7 @@ import { clsx } from 'clsx';
 import { extractSprinkleProps } from '../utils/properties';
 import { textStyle } from './style.css';
 
-const Text = (props: TextProps, ref: React.Ref<HTMLElement>) => {
+const Text = React.forwardRef<HTMLElement, TextProps>((props, ref) => {
 	const { as = 'p', color = 'gray', background, children, fontSize } = props;
 
 	return React.createElement(
@@ -31,7 +31,5 @@ const Text = (props: TextProps, ref: React.Ref<HTMLElement>) => {
 		},
 		children,
 	);
-};
-
-const _Text = React.forwardRef(Text);
-export { _Text as Text };
+});
+export { Text };
