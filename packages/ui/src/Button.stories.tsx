@@ -31,6 +31,8 @@ export const ButtonStory = {
 		children: 'Button',
 		variant: 'solid',
 		color: 'black',
+		isLoading: true,
 		background: 'blue',
+		rightIcon: '😀',
 	},
 };

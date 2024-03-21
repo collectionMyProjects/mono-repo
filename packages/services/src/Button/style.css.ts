@@ -3,9 +3,9 @@ import { createVar, keyframes } from '@vanilla-extract/css';
 import { box, fonts, scale } from 'variables';
 import { fontG } from 'classes';
 
-export const enableColorVariant = createVar(); // 500
-export const hoverColorVariant = createVar(); // 600 outline 50 ghost 50
-export const activeColorVariant = createVar(); // 700 outline 100 ghost 100
+export const enableColorVariant = createVar();
+export const hoverColorVariant = createVar();
+export const activeColorVariant = createVar();
 
 export const buttonStyle = recipe({
 	base: {
@@ -20,6 +20,7 @@ export const buttonStyle = recipe({
 		cursor: 'pointer',
 		userSelect: 'none',
 		transition: 'background-color 0.2s, color 0.2s, border-color 0.2s',
+
 		// @ts-ignore
 		'&[disabled]': {
 			opacity: 0.4,
@@ -99,6 +100,75 @@ export const buttonStyle = recipe({
 				'&:active:not([disabled])': {
 					backgroundColor: activeColorVariant,
 				},
+			},
+		},
+	},
+});
+
+export const spanStyle = recipe({
+	base: {
+		display: 'flex',
+		alignItems: 'center',
+	},
+	variants: {
+		size: {
+			xs: {
+				...fontG.text.xs,
+				fontWeight: fonts.fontWeight[600],
+			},
+			sm: {
+				...fontG.text.sm,
+				fontWeight: fonts.fontWeight[600],
+			},
+			md: {
+				...fontG.text.md,
+				fontWeight: fonts.fontWeight[600],
+			},
+			lg: {
+				...fontG.text.lg,
+				fontWeight: fonts.fontWeight[600],
+			},
+		},
+	},
+});
+
+const spinKeyframes = keyframes({
+	'0%': { transform: 'rotate(0deg)' },
+	'100%': { transform: 'rotate(360deg)' },
+});
+
+export const spinnerStyle = recipe({
+	base: {
+		position: 'absolute',
+		animation: `${spinKeyframes} 0.45s linear infinite`,
+		display: 'inline-block',
+		borderTop: '2px solid currentcolor',
+		borderRight: '2px solid currentcolor',
+		borderBottom: '2px solid transparent',
+		borderLeft: '2px solid transparent',
+		borderRadius: '50%',
+	},
+	variants: {
+		size: {
+			xs: {
+				width: fonts.fontSize[12],
+				height: fonts.fontSize[12],
+				left: `calc(50% - ${fonts.fontSize[12]}/2)`,
+			},
+			sm: {
+				width: fonts.fontSize[14],
+				height: fonts.fontSize[14],
+				left: `calc(50% - ${fonts.fontSize[14]}/2)`,
+			},
+			md: {
+				width: fonts.fontSize[16],
+				height: fonts.fontSize[16],
+				left: `calc(50% - ${fonts.fontSize[16]}/2)`,
+			},
+			lg: {
+				width: fonts.fontSize[18],
+				height: fonts.fontSize[18],
+				left: `calc(50% - ${fonts.fontSize[18]}/2)`,
 			},
 		},
 	},
