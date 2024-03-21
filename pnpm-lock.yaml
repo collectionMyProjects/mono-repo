@@ -263,9 +263,6 @@ importers:
 
   packages/ui:
     dependencies:
-      '@vanilla-extract/dynamic':
-        specifier: ^2.1.0
-        version: 2.1.0
       '@with/foundation':
         specifier: file:../foundation
         version: file:packages/foundation
