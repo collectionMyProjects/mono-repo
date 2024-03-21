@@ -1,9 +1,12 @@
+import { Button } from '@with/services';
 import React from 'react';
-import '@with/foundation/themes.css';
-import '@with/foundation/globalStyle.css';
 
 const page = () => {
-	return <></>;
+	return (
+		<Button variant="solid" size="md" color="green" background="yellow">
+			초기화
+		</Button>
+	);
 };
 
 export default page;

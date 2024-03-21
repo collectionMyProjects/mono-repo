@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 import { BaseStyle, StyleSprinkles } from '../core/style.css';
 import { extractSprinkleProps } from '../utils/properties';
 
-const Flex = (props: FlexProps, ref: React.Ref<HTMLElement>) => {
+const Flex = React.forwardRef<HTMLElement, FlexProps>((props, ref) => {
 	const {
 		as = 'div',
 		color,
@@ -49,7 +49,6 @@ const Flex = (props: FlexProps, ref: React.Ref<HTMLElement>) => {
 		},
 		children,
 	);
-};
+});
 
-const _Flex = React.forwardRef(Flex);
-export { _Flex as Flex };
+export { Flex };

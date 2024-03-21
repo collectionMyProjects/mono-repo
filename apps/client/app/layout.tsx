@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
+import '@with/foundation/themes.css';
+import '@with/foundation/globalStyle.css';
+import '@with/services/style.css';
 
 export const metadata: Metadata = {
 	title: 'Create Turborepo',

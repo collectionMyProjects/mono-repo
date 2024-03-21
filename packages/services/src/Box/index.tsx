@@ -6,7 +6,7 @@ import { clsx } from 'clsx';
 
 export type BoxProps = AsElementProps & StyleProps;
 
-const Box = (props: BoxProps, ref: React.Ref<HTMLElement>) => {
+const Box = React.forwardRef<HTMLElement, BoxProps>((props, ref) => {
 	const { as = 'div', color, background, children } = props;
 
 	return React.createElement(
@@ -29,7 +29,6 @@ const Box = (props: BoxProps, ref: React.Ref<HTMLElement>) => {
 		},
 		children,
 	);
-};
+});
 
-const _Box = React.forwardRef(Box);
-export { _Box as Box };
+export { Box };

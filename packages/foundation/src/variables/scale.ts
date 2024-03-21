@@ -1,16 +1,3 @@
-const color = {
-	black: '#000',
-	white: '#fff',
-};
-
-const black = {
-	black: '#000',
-};
-
-const white = {
-	white: '#fff',
-};
-
 const whiteAlpha = {
 	50: 'rgba(255, 255, 255, 0.04)',
 	100: 'rgba(255, 255, 255, 0.06)',
@@ -168,9 +155,6 @@ const pink = {
 };
 
 export default {
-	color,
-	black,
-	white,
 	whiteAlpha,
 	blackAlpha,
 	gray,
