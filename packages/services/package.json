@@ -44,6 +44,7 @@
 		"classes": "link:../foundation/src/classes",
 		"clsx": "^2.1.0",
 		"csstype": "^3.1.3",
+		"jotai": "^2.7.1",
 		"react": "^18.2.0",
 		"rimraf": "^5.0.5",
 		"variables": "link:../foundation/src/variables"
