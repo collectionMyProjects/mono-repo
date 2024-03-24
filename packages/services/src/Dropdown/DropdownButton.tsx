@@ -10,16 +10,13 @@ const DropdownButton = forwardRef<HTMLButtonElement, DropdownButtonProps>(
 		const { className, itemName = '', children, ...rest } = props;
 		const setActiveItems = useSetAtom(activeItemsAtom);
 
-		const handleClick = useCallback(
-			(e: React.MouseEvent<HTMLButtonElement>) => {
-				setActiveItems((prevItems) =>
-					prevItems.includes(itemName)
-						? prevItems.filter((item) => item !== itemName)
-						: [...prevItems, itemName],
-				);
-			},
-			[itemName, setActiveItems],
-		);
+		const handleClick = useCallback(() => {
+			setActiveItems((prevItems) =>
+				prevItems.includes(itemName)
+					? prevItems.filter((item) => item !== itemName)
+					: [...prevItems, itemName],
+			);
+		}, [itemName, setActiveItems]);
 
 		return (
 			<button
