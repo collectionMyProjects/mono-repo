@@ -48,3 +48,10 @@ export const dropdownPanelStyle = style([
 		},
 	},
 ]);
+
+export const dropdownButtonInterval = style({
+	width: '100%',
+	display: 'flex',
+	justifyContent: 'space-between',
+	alignItems: 'center',
+});
