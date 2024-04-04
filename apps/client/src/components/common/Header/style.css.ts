@@ -13,7 +13,7 @@ export const container = style({
 });
 
 export const contentsWrapper = style({
-	minWidth: '1256px',
+	minWidth: '85%',
 	height: '60px',
 	display: 'flex',
 	alignItems: 'center',

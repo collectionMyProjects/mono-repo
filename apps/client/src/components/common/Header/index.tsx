@@ -2,6 +2,7 @@ import { motion, useScroll } from 'framer-motion';
 import { IconSearchFill } from '@seed-design/icon';
 import { Flex, Text } from '@with/services';
 import * as styles from './style.css';
+import flexG from '@/components/flex';
 
 const Header = () => {
 	const { scrollYProgress } = useScroll();
