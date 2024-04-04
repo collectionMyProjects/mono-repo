@@ -13,19 +13,19 @@
 	}
 
 	@media screen and (min-width: 769px) and (max-width: 1025px) {
-		font-size: 80%;
+		font-size: 85%;
 	}
 
 	@media screen and (min-width: 541px) and (max-width: 768px) {
-		font-size: 70%;
+		font-size: 75%;
 	}
 
 	@media screen and (min-width: 301px) and (max-width: 540px) {
-		font-size: 60%;
+		font-size: 70%;
 	}
 
 	@media screen and (max-width: 300px) {
-		font-size: 50%;
+		font-size: 65%;
 	}
 }
 
