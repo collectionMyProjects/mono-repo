@@ -1,21 +1,26 @@
 import type { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
+import localFont from 'next/font/local';
 import '@with/foundation/themes.css';
 import '@with/foundation/globalStyle.css';
 import '@with/services/style.css';
 
 export const metadata: Metadata = {
-	title: '스탠바이랩',
-	description: '취업하는 이상진',
+	title: 'BSMGG',
+	description: '부산소프트웨어 마이스터',
 	icons: {
-		icon: '/standbylab.png',
+		icon: '/BSMGG.svg',
 	},
 };
+
+const Pretendard = localFont({
+	src: '../../public/fonts/PretendardVariable.woff2',
+});
 
 const RootLayout = ({ children }: PropsWithChildren) => {
 	return (
 		<html lang="en">
-			<body>{children}</body>
+			<body className={Pretendard.className}>{children}</body>
 		</html>
 	);
 };

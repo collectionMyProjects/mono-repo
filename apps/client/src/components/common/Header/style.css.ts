@@ -30,3 +30,8 @@ export const progressBar = style({
 	backgroundColor: `${colors.blue[400]}`,
 	transformOrigin: '0%',
 });
+
+export const logo = style({
+	width: '110px',
+	cursor: 'pointer',
+});

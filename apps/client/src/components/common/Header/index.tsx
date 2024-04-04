@@ -1,8 +1,6 @@
 import { motion, useScroll } from 'framer-motion';
-import { IconSearchFill } from '@seed-design/icon';
 import { Flex, Text } from '@with/services';
 import * as styles from './style.css';
-import flexG from '@/components/flex';
 
 const Header = () => {
 	const { scrollYProgress } = useScroll();
@@ -10,10 +8,11 @@ const Header = () => {
 	return (
 		<header className={styles.container}>
 			<div className={styles.contentsWrapper}>
-				<img src="https://static.standby.kr/static/blog/images/logo.svg" />
-				<Flex align="center" gap={5}>
-					<IconSearchFill style={{ width: '18px' }} />
-					<Text fontSize="lg">검색</Text>
+				<img src="/assets/bsmgg.png" className={styles.logo} alt="logo" />
+				<Flex align="center">
+					<Text fontSize="lg" style={{ cursor: 'pointer' }}>
+						로그인
+					</Text>
 				</Flex>
 			</div>
 			<motion.div
