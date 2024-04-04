@@ -30,6 +30,7 @@ export const dropdownButtonStyle = style([
 		gap: '0.625rem',
 		display: 'flex',
 		alignItems: 'center',
+		background: `${colors.gray[200]}`,
 	},
 ]);
 

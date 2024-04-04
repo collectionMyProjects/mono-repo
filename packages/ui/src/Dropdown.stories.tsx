@@ -49,34 +49,3 @@ export const DropdownStory = {
 		</Dropdown>
 	),
 };
-
-{
-	/* <Dropdown style={{ width: '500px' }}>
-	<DropdownItem itemName="목록1">
-		<DropdownButton>
-			<Text color="gray" fontSize="lg">
-				목록 1
-			</Text>
-		</DropdownButton>
-		<DropdownPanel>
-			<Text color="gray" fontSize="md">
-				내용입니다.
-			</Text>
-		</DropdownPanel>
-	</DropdownItem>
-	<DropdownItem itemName="목록2">
-		<DropdownButton>
-			<Text color="gray" fontSize="lg">
-				목록 2
-			</Text>
-		</DropdownButton>
-		<DropdownPanel>
-			<Text color="gray" fontSize="md">
-				내용입니다.
-				<br />
-				내용입니다.
-			</Text>
-		</DropdownPanel>
-	</DropdownItem>
-</Dropdown> */
-}
